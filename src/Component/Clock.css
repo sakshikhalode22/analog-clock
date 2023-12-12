@@ -1,0 +1,86 @@
+.clock{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgb(21, 138, 73);
+    position: relative;
+    top: 15%;
+    left:4.8%;
+    margin-top: 15%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 6px -6px 9px rgb(14, 92, 49),
+                inset -4px 4px 9px rgb(34, 180, 100),
+                inset -4px 4px 9px rgb(2, 58, 27),
+                inset 4px -4px 9px rgb(47, 77, 62);
+
+}
+
+.face{
+    position: absolute;
+    background: rgb(200, 243, 219);
+    height: 80%;
+    width: 80%;
+    top:10%;
+    left:10%;
+    border-radius: 50%;
+    box-shadow: inset 4px -4px 9px rgb(186, 247, 210),
+                inset -4px 4px 9px  rgb(44, 103, 71),
+                inset 10px -10px 9px rgb(105, 114, 108),
+                inset -10px 10px 9px rgb(64, 147, 89);
+
+}
+
+.hand{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -100%);
+    transform-origin: center top;
+    border-radius: 40px;
+}
+
+.secondhand{
+    height: 70px;
+    width: 2px;
+    background-color: rgb(255, 0, 0);
+    z-index: 5;
+    box-shadow: inset -.5px .5px 1px rgb(7, 7, 7),
+                inset .5px -.5px 1px  rgb(121, 122, 122);
+}
+
+.minutehand{
+    height: 65px;
+    width: 3px;
+    background-color: rgb(75, 75, 75);
+    z-index: 4;
+    box-shadow: inset -.5px .5px 1px rgb(7, 7, 7),
+                inset .5px -.5px 1px  rgb(121, 122, 122);
+    
+}
+
+.hourhand{
+    height: 50px;
+    width: 4px;
+    background-color: rgb(75, 75, 75);
+    z-index: 3;
+    box-shadow: inset -.5px .5px 1px rgb(7, 7, 7),
+                inset .5px -.5px 1px  rgb(121, 122, 122);
+    
+}
+
+.center{
+    background-color: rgb(21, 138, 73);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    box-shadow: inset 3px -3px 4px rgb(27, 72, 30),
+                inset -3px 3px 4px  rgb(73, 160, 107);
+
+}
