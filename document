@@ -1,0 +1,29 @@
+
+This code creates a functional React component that displays a digital and analog clock. The clock uses CSS to style the appearance.
+
+To implement the clock, the following steps are taken:
+
+A state variable `time` is created using the `useState` hook to hold the current time.
+
+The `useEffect` hook is used to set up a function that will update the time state variable every `second`.
+
+Inside the useEffect function, the following steps are performed:
+
+a. A function `hour12` is defined that converts the current hour from a `24-hour format to a 12-hour format`.
+
+b. The `current minute and second` are extracted from `the time object`.
+
+c. The rotation of the `hour, minute, and second hands` on the clock face are calculated using the extracted time values.
+
+d. The DOM elements for the hour, minute, and second hands are accessed using document.getElementById and their style.transform property is set to the calculated rotation.
+
+e. The DOM element for the digital clock is accessed and its innerHTML is set to the formatted current time.
+
+The component returns a `JSX expression` that renders the clock face.
+
+The component is exported for use in other parts of the application.
+
+Note that the use of setTimeout inside the setInterval function in the useEffect hook ensures that the rotation calculations are performed at least once per second, even if the time state variable update is delayed.
+
+Additionally, the `cleanup function returned by the useEffect hook` ensures that the interval timer is cleared when the component is unmounted to prevent memory leaks.
+
