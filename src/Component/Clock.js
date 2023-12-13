@@ -8,17 +8,37 @@ function Clock() {
     const interval=setInterval(()=>
         setTimeout(setTime(new Date()),1000)
     )
-    let hr=time.getHours();
-    const min=time.getMinutes();
+
+    let ampm='';
+    const min=time.getMinutes().toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false})
     const sec=time.getSeconds();
 
-    const hourHand =document.getElementById('hourHand')
-    const minuteHand =document.getElementById('minuteHand')
-    const secondHand =document.getElementById('secondHand')
+    const hour12=()=>{
+        let hour=time.getHours();
+        if(hour<12){
+            ampm='AM';
+        }
+        if(hour>=12){
+            hour=hour-12;
+            ampm='PM';
+        }
+        if(hour===12){
+            hour=12;
+        }
+        return hour;
+    }
 
-    hourHand.style.transform=`rotate(${hr*30+min*0.5-180}deg)`
-    minuteHand.style.transform=`rotate(${min*6-180}deg)`
-    secondHand.style.transform=`rotate(${sec*6-180}deg)`
+    let hr=hour12();
+
+    const hourHand =document.getElementById('hourHand');
+    const minuteHand =document.getElementById('minuteHand');
+    const secondHand =document.getElementById('secondHand');
+    const digitalClock = document.getElementById('digital')
+
+    hourHand.style.transform=`rotate(${hr*30+min*0.5-180}deg)`;
+    minuteHand.style.transform=`rotate(${min*6-180}deg)`;
+    secondHand.style.transform=`rotate(${sec*6-180}deg)`;
+    digitalClock.innerHTML=hr+":"+min+" "+ampm
 
     return ()=>{
         clearInterval(interval)
@@ -28,12 +48,14 @@ function Clock() {
  return (
     
     <div>
+        
         <div className='clock'>
             <div className='face'>
-                <div id="secondHand" className='hand secondhand'></div>
-                <div id="minuteHand" className='hand minutehand'></div>
-                <div id="hourHand" className='hand hourhand'></div>
+                <div id='secondHand' className='hand secondhand'></div>
+                <div id='minuteHand' className='hand minutehand'></div>
+                <div id='hourHand' className='hand hourhand'></div>
                 <div className='hand center'></div>
+                <div id='digital' className='digital'></div>
             </div>
         </div>
     </div>

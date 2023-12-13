@@ -17,6 +17,8 @@
 
 }
 
+
+
 .face{
     position: absolute;
     background: rgb(200, 243, 219);
@@ -83,4 +85,13 @@
     box-shadow: inset 3px -3px 4px rgb(27, 72, 30),
                 inset -3px 3px 4px  rgb(73, 160, 107);
 
+}
+
+.digital{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(16, 94, 32);
+    width:50%;
 }
